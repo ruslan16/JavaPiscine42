@@ -27,6 +27,7 @@ public class Program {
     public static int readMark(Scanner scan) {
         int min;
         int one, two, three, four, five;
+        final int MAX = 9;
 
         one = scan.nextInt();
         two = scan.nextInt();
@@ -34,8 +35,8 @@ public class Program {
         four = scan.nextInt();
         five = scan.nextInt();
 
-        if ((one > 9) || (two > 9) || (three > 9)
-                || (four > 9) || five > 9){
+        if ((one > MAX) || (two > MAX) || (three > MAX)
+                || (four > MAX) || five > MAX){
             System.err.println("IllegalArguments");
             System.exit(-1);
         }
@@ -75,13 +76,14 @@ public class Program {
         Scanner scan = new Scanner(System.in);
 
         final int LIMIT = 18;
+        final String EOF = "42";
         String week;
         int nameW, tmp, nameTmp, countW = 1;
         long info = 0;
 
         week = scan.next();
 
-        if (week.equals("42")){
+        if (week.equals(EOF)){
             System.exit(1);
         }
 
@@ -91,7 +93,7 @@ public class Program {
             tmp = readMark(scan);
             info = info * 10 + tmp;
             week = scan.next();
-            if (week.equals("42")){
+            if (week.equals(EOF)){
                 break;
             }
             nameTmp = nameW;

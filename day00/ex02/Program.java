@@ -30,6 +30,7 @@ public class Program {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
+        final int EOF = 42;
         int num = scan.nextInt();
         int sum_num = 0;
         int count = 0;
@@ -39,7 +40,7 @@ public class Program {
             System.exit(-1);
         }
 
-        while (num != 42){
+        while (num != EOF){
             sum_num = sumNum(num);
             if (isPrimary(sum_num, 2) == true){
                 count++;
