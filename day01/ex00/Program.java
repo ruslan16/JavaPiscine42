@@ -1,5 +1,7 @@
 package ex00;
 
+import java.util.UUID;
+
 public class Program {
     public static void main(String[] args) {
         User user = new User(120, "Ivan", 11);
@@ -7,11 +9,14 @@ public class Program {
         Transaction transaction = new Transaction("OUTCOME");
 
         transaction.setAmount(123);
-        System.out.println((transaction.amount + transaction.transCat));
+        System.out.println((transaction.getAmount() + transaction.getTransCat()));
         transaction.setTransCat("INCOME");
         transaction.setAmount(123);
-        System.out.println(user.balance + user.name + user.identifier);
-        System.out.println(newUser.balance + newUser.name + newUser.identifier);
-        System.out.println((transaction.amount + transaction.transCat));
+        transaction.setRecipient(user);
+        transaction.setSender(newUser);
+        System.out.println(user.getBalance());
+        System.out.println(newUser.getBalance());
+        System.out.println(transaction.getAmount() + transaction.getTransCat());
+        transaction.setIdentifier(UUID.randomUUID());
     }
 }

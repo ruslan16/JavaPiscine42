@@ -1,9 +1,9 @@
 package ex02;
 
 public class User {
-    public Integer id;
-    public String name;
-    public Integer balance;
+    private Integer id;
+    private String name;
+    private Integer balance;
 
     public User(Integer balance, String name) {
         if (balance < 0) {
@@ -14,5 +14,9 @@ public class User {
         }
         this.name = name;
         this.id = UserIdsGenerator.getInstance().generateId();
+    }
+
+    public int getId(){
+        return (id);
     }
 }

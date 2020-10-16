@@ -1,13 +1,13 @@
-package ex00;
+package ex03;
 
 import java.util.UUID;
 
 public class Transaction {
-    private String identifier;
-    private User recipient;
-    private User sender;
-    private String transCat;
-    private Integer amount;
+    public String identifier;
+    public User recipient;
+    public User sender;
+    public String transCat;
+    public Integer amount;
 
     public Transaction(String transCat) {
         this.transCat = transCat;
@@ -30,10 +30,6 @@ public class Transaction {
 
     public void setTransCat(String transCat){
         this.transCat = transCat;
-    }
-
-    public String getTransCat(){
-        return (transCat);
     }
 
     public void setIdentifier(UUID id){

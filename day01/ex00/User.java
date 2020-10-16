@@ -4,9 +4,9 @@ import java.util.UUID;
 
 public class User {
 
-    public Integer identifier;
-    public String name;
-    public Integer balance;
+    private Integer identifier;
+    private String name;
+    private Integer balance;
 
     public User(Integer balance, String name, Integer identifier) {
         if (balance < 0) {
@@ -17,5 +17,9 @@ public class User {
         }
         this.name = name;
         this.identifier = identifier;
+    }
+
+    public int getBalance(){
+        return (balance);
     }
 }

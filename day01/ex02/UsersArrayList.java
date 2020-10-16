@@ -26,8 +26,8 @@ public class UsersArrayList implements UserList {
         if (arrUser[sizeArr - 1] != null) {
             tmpArr = new User[sizeArr];
             tmpArr = copyArr(arrUser, sizeArr);
-            arrUser = new User[sizeArr * 2];
-            sizeArr *= 2;
+            sizeArr += sizeArr / 2;
+            arrUser = new User[sizeArr];
             arrUser = copyArr(tmpArr, sizeArr);
         }
 
@@ -43,13 +43,13 @@ public class UsersArrayList implements UserList {
 
     public User retrById(Integer id) throws UserNotFoundException {
         for (int i = 0; i < countEl; i++){
-            if (arrUser[i].id == id){
+            if (arrUser[i].getId() == id){
                 return (arrUser[i]);
             }
 
-            throw new UserNotFoundException();
         }
-        return (null);
+
+        throw new UserNotFoundException();
     }
 
     public User retrByInd(Integer index){
@@ -58,5 +58,9 @@ public class UsersArrayList implements UserList {
 
     public int retrNumUs(){
         return (countEl);
+    }
+
+    public User[] getArrUser(){
+        return (arrUser);
     }
 }

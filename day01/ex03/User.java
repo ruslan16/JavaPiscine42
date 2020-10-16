@@ -1,10 +1,11 @@
-package ex01;
+package ex03;
 
 public class User {
 
-    private Integer id;
-    private String name;
-    private Integer balance;
+    public Integer id;
+    public String name;
+    public Integer balance;
+    public TransactionsList transactions;
 
     public User(Integer balance, String name) {
         if (balance < 0) {
@@ -15,9 +16,6 @@ public class User {
         }
         this.name = name;
         this.id = UserIdsGenerator.getInstance().generateId();
-    }
-
-    public int getId(){
-        return (id);
+        this.transactions = new TransactionsLinkedList();
     }
 }
